@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="sylius.form.gateway_configuration.borica.borica_terminal">
+                <source>sylius.form.gateway_configuration.borica.borica_terminal</source>
+                <target>Borica Terminal</target>
+            </trans-unit>
+            <trans-unit id="sylius.form.gateway_configuration.borica.borica_etlog_certificate">
+                <source>sylius.form.gateway_configuration.borica.borica_etlog_certificate</source>
+                <target>Borica Etlog Certificate</target>
+            </trans-unit>
+            <trans-unit id="sylius.form.gateway_configuration.borica.borica_etlog_private_key">
+                <source>sylius.form.gateway_configuration.borica.borica_etlog_private_key</source>
+                <target>Borica Etlog Private Key</target>
+            </trans-unit>
+            <trans-unit id="sylius.form.gateway_configuration.borica.borica_real_certificate">
+                <source>sylius.form.gateway_configuration.borica.borica_real_certificate</source>
+                <target>Borica Real Certificate</target>
+            </trans-unit>
+            <trans-unit id="sylius.form.gateway_configuration.borica.borica_real_private_key">
+                <source>sylius.form.gateway_configuration.borica.borica_real_private_key</source>
+                <target>Borica Real Private Key</target>
+            </trans-unit>
+            <trans-unit id="sylius.form.gateway_configuration.borica.borica_test_certificate">
+                <source>sylius.form.gateway_configuration.borica.borica_test_certificate</source>
+                <target>Borica Test Certificate</target>
+            </trans-unit>
+            <trans-unit id="sylius.form.gateway_configuration.borica.borica_test_private_key">
+                <source>sylius.form.gateway_configuration.borica.borica_test_private_key</source>
+                <target>Borica Test Private Key</target>
+            </trans-unit>
+            <trans-unit id="sylius.form.gateway_configuration.borica.sandbox">
+                <source>sylius.form.gateway_configuration.borica.sandbox</source>
+                <target>Sandbox</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

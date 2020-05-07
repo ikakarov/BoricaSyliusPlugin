@@ -1,0 +1,17 @@
+sylius_shop:
+    resource: "@SyliusShopBundle/Resources/config/routing.yml"
+    prefix: /{_locale}
+    requirements:
+        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
+
+sylius_shop_payum:
+    resource: "@SyliusShopBundle/Resources/config/routing/payum.yml"
+
+payum_borica_notification_url:
+    resource: "@VanssaBoricaSyliusPlugin/Resources/config/routes.yaml"
+
+sylius_shop_default_locale:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.shop.locale_switch:switchAction

@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@VanssaBoricaSyliusPlugin/Resources/config/services.xml" }

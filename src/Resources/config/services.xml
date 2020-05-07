@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <service id="vanssa.borica.gateway_factory" class="Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder" public="true">
+            <argument>Vanssa\BoricaSyliusPlugin\Payum\SyliusBoricaPaymentGatewayFactory</argument>
+            <tag name="payum.gateway_factory_builder" factory="borica"/>
+        </service>
+
+        <service id="Vanssa\BoricaSyliusPlugin\Form\Type\SyliusGatewayConfigurationType">
+            <tag name="sylius.gateway_configuration_type" type="borica" label="Borica Payment"/>
+            <tag name="form.type"/>
+        </service>
+
+        <service id="Vanssa\BoricaSyliusPlugin\Payum\Action\CaptureAction" public="true">
+            <argument type="service" id="sylius.http_client"/>
+            <argument type="service" id="router.default"/>
+            <argument type="service"  id="request_stack" />
+            <tag name="payum.action" factory="borica" alias="payum.action.capture"/>
+        </service>
+
+        <service id="vanssa.borica_payments.action.notify" class="Vanssa\BoricaSyliusPlugin\Payum\Action\NotifyAction" public="true" autoconfigure="true">
+            <argument type="service" id="request_stack"/>
+            <tag name="payum.action" factory="borica" alias="payum.action.notify" />
+        </service>
+
+        <service id="Vanssa\BoricaSyliusPlugin\Controller\NotifyController" public="true">
+            <argument id="sylius.repository.payment" type="service"/>
+            <argument id="payum" type="service" />
+        </service>
+
+    </services>
+</container>

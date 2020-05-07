@@ -1,0 +1,8 @@
+public/media
+public/bundles
+public/assets
+node_modules
+var/cache/*
+var/logs/*
+var/log/*
+var/data.db

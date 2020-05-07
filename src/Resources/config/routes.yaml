@@ -1,0 +1,5 @@
+payum_borica_notification_url:
+    path: /payment/borica/capture/
+    methods: [GET, POST]
+    defaults:
+        _controller: VanssaBoricaSyliusPlugin:Notify:do
