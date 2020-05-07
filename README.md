@@ -1,6 +1,6 @@
 # (WIP) Sylius Borica payment gateway plugin  
 
-##Motivation 
+## Motivation 
 Adding Borica Bulgarian payment provider. 
 Bassed on [mirovit/borica-api](https://github.com/mirovit/borica-api)
 
