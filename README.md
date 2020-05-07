@@ -1,91 +1,46 @@
-<p align="center">
-    <a href="https://sylius.com" target="_blank">
-        <img src="https://demo.sylius.com/assets/shop/img/logo.png" />
-    </a>
-</p>
+# (WIP) Sylius Borica payment gateway plugin  
 
-<h1 align="center">WIP - nedded to add documentation </h1>
-<h1 align="center">Borica Sylius Integrantion</h1>
-
-<p align="center">Siple integration between Sylius Paum and Borica</p>
-
-
+##Motivation 
+Adding Borica Bulgarian payment provider. 
+Bassed on [mirovit/borica-api](https://github.com/mirovit/borica-api)
 
 ## Installation
 
-1. Run `composer create-project sylius/plugin-skeleton ProjectName`.
+```bash
+composer require vanssa/borica-sylius-plugin
+```
 
-2. From the plugin skeleton root directory, run the following commands:
 
-    ```bash
-    $ (cd tests/Application && yarn install)
-    $ (cd tests/Application && yarn build)
-    $ (cd tests/Application && bin/console assets:install public -e test)
-    
-    $ (cd tests/Application && bin/console doctrine:database:create -e test)
-    $ (cd tests/Application && bin/console doctrine:schema:create -e test)
-    ```
+Add plugin dependencies to your config/bundles.php file:
 
-To be able to setup a plugin's database, remember to configure you database credentials in `tests/Application/.env` and `tests/Application/.env.test`.
+```php
+return [
+    ...
+    Vanssa\BoricaSyliusPlugin\VanssaBoricaSyliusPlugin::class => ['all'=>true]
+];
+```
 
-## Usage
+Add routing to your config/routes/sylius_shop.yaml
 
-### Running plugin tests
+```yml
+payum_borica_notification_url:
+    resource: "@VanssaBoricaSyliusPlugin/Resources/config/routes.yaml"
+```
 
-  - PHPUnit
+Add config to your config/packages/_sylius.yaml
 
-    ```bash
-    $ vendor/bin/phpunit
-    ```
+```yml
+imports:
+ ...
+    - { resource: "@VanssaBoricaSyliusPlugin/Resources/config/config.yml" }
+```
 
-  - PHPSpec
+Return url is :
+https://{domain_name}/payment/borica/capture/
 
-    ```bash
-    $ vendor/bin/phpspec run
-    ```
+Signatures and keys is need to add in administration. 
 
-  - Behat (non-JS scenarios)
-
-    ```bash
-    $ vendor/bin/behat --tags="~@javascript"
-    ```
-
-  - Behat (JS scenarios)
- 
-    1. Download [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/)
-    
-    2. Download [Selenium Standalone Server](https://www.seleniumhq.org/download/).
-    
-    2. Run Selenium server with previously downloaded Chromedriver:
-    
-        ```bash
-        $ java -Dwebdriver.chrome.driver=chromedriver -jar selenium-server-standalone.jar
-        ```
-        
-    3. Run test application's webserver on `localhost:8080`:
-    
-        ```bash
-        $ (cd tests/Application && bin/console server:run localhost:8080 -d public -e test)
-        ```
-    
-    4. Run Behat:
-    
-        ```bash
-        $ vendor/bin/behat --tags="@javascript"
-        ```
-
-### Opening Sylius with your plugin
-
-- Using `test` environment:
-
-    ```bash
-    $ (cd tests/Application && bin/console sylius:fixtures:load -e test)
-    $ (cd tests/Application && bin/console server:run -d public -e test)
-    ```
-    
-- Using `dev` environment:
-
-    ```bash
-    $ (cd tests/Application && bin/console sylius:fixtures:load -e dev)
-    $ (cd tests/Application && bin/console server:run -d public -e dev)
-    ```
+#TODO 
+1. Test configuration per channel channel 
+2. Add detailed documentation. 
+3. Cleanup typo errors.
