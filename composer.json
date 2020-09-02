@@ -7,7 +7,7 @@
     "require": {
         "php": "^7.2",
         "nesbot/carbon": "^2.16",
-        "sylius/sylius": "1.6.*",
+        "sylius/sylius": ">=1.6.*",
         "ext-openssl": "*"
     },
     "require-dev": {
