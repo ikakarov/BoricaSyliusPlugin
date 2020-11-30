@@ -140,7 +140,7 @@ class NotifyController extends AbstractController
         $methods = $this->get('sylius.repository.payment_method')->findEnabledForChannel($channel);
         $paymnet_method = null;
         foreach ($methods as $method) {
-            if ($method->getGatewayConfig()->getGatewayName() == 'borica') {
+            if ($method->getGatewayConfig()->getFactoryName() == 'borica') {
                 $paymnet_method = $method;
             }
         }
