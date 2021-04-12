@@ -1,5 +1,5 @@
 {
-    "name": "vanssa/borica-sylius-plugin",
+    "name": "vanssatoRemove/borica-sylius-plugin",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin","borica","payment","paym"],
     "description": "Borica integration from Sylius",
